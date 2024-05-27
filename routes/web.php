@@ -18,10 +18,11 @@ Route::get('/delete-article/{id}', [ArticleController::class, 'delete_article'])
 Route::get('/update-article/{id}', [ArticleController::class, 'update_article']);
 Route::post('/update/traitement', [ArticleController::class, 'update_article_traitement']);
 
-Route::get('/detail', function () {
-    return view('articles.detail');
-});
+// Route::get('/detail', function () {
+//     return view('articles.detail');
+// });
 
+Route::get('/detail/{id}', [ArticleController::class, 'detail']);
 
 
 

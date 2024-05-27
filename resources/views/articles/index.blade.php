@@ -25,12 +25,9 @@
                       <tr>
                         <th>#</th>
                         <th>nom</th>
-                        <th>Description</th>
                         <th>Date_création</th>
                         <th>Photo</th>
                         <th>Action</th>
-
-                  
                       </tr>
                   </thead>
                   <tbody>
@@ -40,12 +37,13 @@
                       <tr>
                         <td>{{$article->id}}</td>
                         <td>{{$article ->nom}}</td>
-                        <td>{{$article ->description}}</td>
                         <td>{{$article ->date_création}}</td>
                         <td ><img src="{{$article ->photo}}" alt="" style="width:50px; border-radius: 50%;height:50px"></td>
                         <td>
                           <a href="/delete-article/{{$article->id}}" class="btn btn-danger">Delete</a>
                           <a href="/update-article/{{$article->id}}" class="btn btn-info">Update</a>
+                          <a href="/detail/{{$article->id}}" class="btn btn-info">Détail</a>
+
                         
 
 
