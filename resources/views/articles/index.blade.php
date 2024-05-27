@@ -40,13 +40,9 @@
                         <td>{{$article ->date_création}}</td>
                         <td ><img src="{{$article ->photo}}" alt="" style="width:50px; border-radius: 50%;height:50px"></td>
                         <td>
-                          <a href="/delete-article/{{$article->id}}" class="btn btn-danger">Delete</a>
-                          <a href="/update-article/{{$article->id}}" class="btn btn-info">Update</a>
-                          <a href="/detail/{{$article->id}}" class="btn btn-info">Détail</a>
-
-                        
-
-
+                        <a onclick="return confirm('Confirmer la suppression')" href="/delete-article/{{$article->id}}" class="btn btn-danger">Delete</a>
+                        <a href="/update-article/{{$article->id}}" class="btn btn-info">Update</a>
+                        <a href="/detail/{{$article->id}}" class="btn btn-info">Détail</a>
                         </td>
                         @endforeach
                     </td>
