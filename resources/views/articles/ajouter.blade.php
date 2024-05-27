@@ -50,7 +50,7 @@
               </div>
 
               <div class="mb-3">
-                <label class="form-label">Validation</label><br>
+                <label class="form-label">A la une</label><br>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" id="valide" name="valider" value="1">
                   <label class="form-check-label" for="featuredYes">Oui</label>
