@@ -50,6 +50,19 @@
                 <label for="Classe" class="form-label">PHOTO</label>
                 <input type="text" class="form-control" id="photo"  name="photo" value="{{$articles->photo}}">
               </div>
+
+              <div class="mb-3">
+                <label class="form-label">A la une</label><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="valideOui" name="valider" value="1" {{ $articles->valider == 1 ? 'checked' : '' }}>
+                  <label class="form-check-label" for="valideOui">Oui</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="valideNon" name="valider" value="0" {{ $articles->valider == 0 ? 'checked' : '' }}>
+                  <label class="form-check-label" for="valideNon">Non</label>
+                </div>
+              </div>
+
             
             <button type="submit" class="btn btn-primary">MODIFIER UN ARTICLE</button>
             <br> <br>

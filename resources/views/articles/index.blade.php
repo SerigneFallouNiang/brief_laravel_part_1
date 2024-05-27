@@ -26,8 +26,11 @@
                         <th>#</th>
                         <th>nom</th>
                         <th>Date_création</th>
+                        <th>A la une</th>
                         <th>Photo</th>
                         <th>Action</th>
+                       
+                        
                       </tr>
                   </thead>
                   <tbody>
@@ -38,12 +41,27 @@
                         <td>{{$article->id}}</td>
                         <td>{{$article ->nom}}</td>
                         <td>{{$article ->date_création}}</td>
+                        <td>
+                          <div class="mb-3">
+                            {{-- <label class="form-label">A la une</label><br> --}}
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" id="valideOui{{$article->id}}" name="valider{{$article->id}}" value="1" {{ $article->valider == 1 ? 'checked' : '' }} disabled>
+                              <label class="form-check-label" for="valideOui{{$article->id}}">Oui</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" id="valideNon{{$article->id}}" name="valider{{$article->id}}" value="0" {{ $article->valider == 0 ? 'checked' : '' }} disabled>
+                              <label class="form-check-label" for="valideNon{{$article->id}}">Non</label>
+                            </div>
+                          </div>
+                        </td>
                         <td ><img src="{{$article ->photo}}" alt="" style="width:50px; border-radius: 50%;height:50px"></td>
                         <td>
                         <a onclick="return confirm('Confirmer la suppression')" href="/delete-article/{{$article->id}}" class="btn btn-danger">Delete</a>
                         <a href="/update-article/{{$article->id}}" class="btn btn-info">Update</a>
                         <a href="/detail/{{$article->id}}" class="btn btn-info">Détail</a>
                         </td>
+
+                        
                         @endforeach
                     </td>
          
