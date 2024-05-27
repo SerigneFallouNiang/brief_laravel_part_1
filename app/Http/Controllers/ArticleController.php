@@ -29,6 +29,8 @@ class ArticleController extends Controller
         $article->description=$request->description;
         $article->date_création=$request->date_création;
         $article->photo=$request->photo;
+        $article->valider= $request->valider;
+
 
         $article->save();
 
@@ -49,14 +51,22 @@ class ArticleController extends Controller
 
     public function update_article_traitement(Request $request){
      
-        $articles =Article::find($request->id);
-        dd($articles->all());
-        $article->nom=$request->nom;
-        $article->description=$request->description;
-        $article->date_création=$request->date_création;
-        $article->photo=$request->photo;
-        $article->update();
+        $article = Article::find($request->id);
 
-        return redirect('/article')->with('status','L\'article a bien été modifier avec succes.');
+        // if ($article) {
+            $article->nom = $request->nom;
+            $article->description = $request->description;
+            $article->date_creation = $request->date_creation;
+            $article->photo = $request->photo;
+            $article->valider= $request->valider;
+
+            $article->update();
+    
+            return redirect('/article')->with('status', 'L\'article a bien été modifié avec succès.');
+        // } else {
+        //     // Gérez le cas où l'article n'a pas été trouvé
+        //     return redirect('/article')->with('status', 'L\'article à mettre à jour n\'a pas été trouvé.');
+        // }
+    
     }
 }

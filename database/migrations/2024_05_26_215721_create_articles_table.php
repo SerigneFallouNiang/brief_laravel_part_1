@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('date_création');
             $table->string('photo',300);
+            $table->inter('valider');
 
             $table->timestamps();
         });

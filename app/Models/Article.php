@@ -14,6 +14,7 @@ class Article extends Model
         'description',
         'date_création',
         'photo',
+        'valider',
 
     ];
 }

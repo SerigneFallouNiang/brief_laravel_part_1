@@ -48,6 +48,18 @@
                 <label for="Classe" class="form-label">PHOTO</label>
                 <input type="text" class="form-control" id="photo"  name="photo">
               </div>
+
+              <div class="mb-3">
+                <label class="form-label">Validation</label><br>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="valide" name="valider" value="1">
+                  <label class="form-check-label" for="featuredYes">Oui</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" id="featuredNo" name="valider" value="0">
+                  <label class="form-check-label" for="featuredNo">Non</label>
+                </div>
+              </div>
             
             <button type="submit" class="btn btn-primary">AJOUTER UN ARTICLE</button>
             <br> <br>
