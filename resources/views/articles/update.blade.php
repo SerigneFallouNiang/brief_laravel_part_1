@@ -29,24 +29,26 @@
 
           <form action="/update/traitement" method="POST" class="form-group" >
             @csrf
+            <input type="text" name="id" style="display: none;"  value="{{$articles->id}}">
+
             <div class="mb-3">
               <label for="Nom" class="form-label">Nom</label>
-              <input type="text" class="form-control" id="Nom"  name="nom" value="{{$article->nom}}">
+              <input type="text" class="form-control" id="Nom"  name="nom" value="{{$articles->nom}}">
             </div>
 
             <div class="mb-3">
                 <label for="Description" class="form-label">Description</label>
-                <input type="text" class="form-control" id="description"  name="description" value="{{$article->description}}">
+                <input type="text" class="form-control" id="description"  name="description" value="{{$articles->description}}">
               </div>
 
               <div class="mb-3">
                 <label for="Classe" class="form-label">Date création</label>
-                <input type="date" class="form-control" id="date"  name="date_création" value="{{$article->date_création}}">
+                <input type="date" class="form-control" id="date"  name="date_création" value="{{$articles->date_création}}">
               </div>
 
               <div class="mb-3">
                 <label for="Classe" class="form-label">PHOTO</label>
-                <input type="text" class="form-control" id="photo"  name="photo" value="{{$article->photo}}">
+                <input type="text" class="form-control" id="photo"  name="photo" value="{{$articles->photo}}">
               </div>
             
             <button type="submit" class="btn btn-primary">MODIFIER UN ARTICLE</button>

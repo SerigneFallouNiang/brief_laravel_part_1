@@ -45,28 +45,22 @@ class ArticleController extends Controller
     }
 
     public function update_article($id){
-            $article=Article::find($id);
-            return view ('articles.update', compact('article') );
+            $articles=Article::find($id);
+            return view ('articles.update', compact('articles') );
     }
 
     public function update_article_traitement(Request $request){
      
-        $article = Article::find($request->id);
-
-        // if ($article) {
+        $article= Article::find($request->id);
             $article->nom = $request->nom;
             $article->description = $request->description;
-            $article->date_creation = $request->date_creation;
+            $article->date_création = $request->date_création;
             $article->photo = $request->photo;
             $article->valider= $request->valider;
 
             $article->update();
     
             return redirect('/article')->with('status', 'L\'article a bien été modifié avec succès.');
-        // } else {
-        //     // Gérez le cas où l'article n'a pas été trouvé
-        //     return redirect('/article')->with('status', 'L\'article à mettre à jour n\'a pas été trouvé.');
-        // }
     
     }
 }
